@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Components/Login/Login.scss"],"names":[],"mappings":"AAAA,aACE,kBAAmB,CACnB,YAAa,CAEb,cAAe,CACf,+BAA4C","file":"Login.4e317103.chunk.css","sourcesContent":[".login-title {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n\r\n  font-size: 20px;\r\n  border-bottom: 1px solid rgba(46, 49, 49, 1);\r\n}\r\n"]}

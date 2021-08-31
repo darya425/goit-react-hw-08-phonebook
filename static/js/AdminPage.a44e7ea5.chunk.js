@@ -1,0 +1,2 @@
+(this["webpackJsonpgoit-react-hw-08-phonebook"]=this["webpackJsonpgoit-react-hw-08-phonebook"]||[]).push([[1],{113:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return c}));n(0);var o=n(95),a=n(1),c=function(){return Object(a.jsx)(o.a,{children:Object(a.jsx)("p",{className:"admin-text",children:"Hello! You are admin of nothing! Congratulate!"})})}}}]);
+//# sourceMappingURL=AdminPage.a44e7ea5.chunk.js.map

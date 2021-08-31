@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Components/Register/Register.scss"],"names":[],"mappings":"AAAA,gBACE,kBAAmB,CACnB,YAAa,CAEb,cAAe,CACf,+BAA4C","file":"Register.fa34c30b.chunk.css","sourcesContent":[".register-title {\r\n  margin-bottom: 30px;\r\n  padding: 10px;\r\n\r\n  font-size: 20px;\r\n  border-bottom: 1px solid rgba(46, 49, 49, 1);\r\n}\r\n"]}
