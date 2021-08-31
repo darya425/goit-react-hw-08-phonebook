@@ -1,0 +1,54 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  background-color: rgba(46, 49, 49, 0.4);
+  border-radius: 10px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+
+    background-image: url(./buddhist.png);
+    background-size: cover;
+  }
+}
+
+.btn-contact {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+
+  color: rgba(236, 236, 236, 1);
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+
+  background: {
+    image: url(./bin.png);
+    position: center;
+    size: 20px;
+    repeat: no-repeat;
+  }
+
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #5c636a;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+.name-item {
+  font-size: 20px;
+  text-transform: capitalize;
+}

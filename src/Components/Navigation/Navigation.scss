@@ -1,0 +1,38 @@
+.header {
+  margin-bottom: 20px;
+  background-color: rgba(46, 49, 49, 0.7);
+}
+
+.navbar {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-link {
+  margin-right: 20px;
+}
+
+.form-control {
+  width: 300px;
+
+  &:focus {
+    border-color: rgba(189, 195, 199, 1);
+    box-shadow: 0 0 0 0.25rem rgba(189, 195, 199, 1);
+  }
+}
+
+.nav-title {
+  margin-right: 20px;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.btn.btn-light {
+  margin-bottom: 0;
+}
