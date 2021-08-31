@@ -45,11 +45,13 @@ const Login = () => {
       const result = await loginUser({ email, password })
         .unwrap()
         .then(payload => {
-          toast.success('You have registered!', { autoClose: 2000 });
+          toast.success('You are logged in!', { autoClose: 2000 });
           return payload;
         })
         .catch(() => {
-          toast.error('Fuck YOU!', { autoClose: 2000 });
+          toast.error('Login canceled. Check your username or password', {
+            autoClose: 2000,
+          });
         });
       if (result) {
         dispatch(setCredentials(result));

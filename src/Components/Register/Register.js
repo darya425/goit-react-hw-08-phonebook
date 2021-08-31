@@ -51,7 +51,7 @@ const Register = () => {
       })
       .catch(error => {
         console.log(error);
-        toast.error('Fuck YOU!', { autoClose: 2000 });
+        toast.error('Registration canceled!', { autoClose: 2000 });
       });
 
     reset();
