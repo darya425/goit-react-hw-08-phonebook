@@ -31,7 +31,7 @@ const Navigation = () => {
   const name = useSelector(getUserName);
 
   const [logoutUser, { isLoading }] = useLogoutUserMutation();
-  const { data } = useFetchCurrentUserQuery(token ?? skipToken);
+  const { data: currentUser } = useFetchCurrentUserQuery(token ?? skipToken);
 
   const isAdmin = name === 'admin';
 
@@ -40,8 +40,8 @@ const Navigation = () => {
       return;
     }
 
-    dispatch(setCurrentUser(data));
-  }, [dispatch, data, token]);
+    dispatch(setCurrentUser(currentUser));
+  }, [dispatch, currentUser, token]);
 
   const handleSubmit = async () => {
     try {
