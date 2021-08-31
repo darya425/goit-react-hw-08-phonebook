@@ -52,6 +52,7 @@ const Login = () => {
           toast.error('Login canceled. Check your username or password', {
             autoClose: 2000,
           });
+          reset();
         });
       if (result) {
         dispatch(setCredentials(result));
@@ -59,6 +60,11 @@ const Login = () => {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const reset = () => {
+    setEmail('');
+    setPassword('');
   };
 
   return (
