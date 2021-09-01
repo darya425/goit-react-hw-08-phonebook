@@ -52,6 +52,11 @@ const Navigation = () => {
     }
   };
 
+  // const handleSubmit = () => {
+  //   const result = logoutUser();
+  //   dispatch(removeCredetials(result.data));
+  // };
+
   return (
     <div className="header">
       <Container>
@@ -59,6 +64,7 @@ const Navigation = () => {
           <Navbar.Brand as={NavLink} to="/">
             Phonebook
           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="responsive-navbar-nav">
             {isLoggedIn && (
               <Nav className="me-auto">
