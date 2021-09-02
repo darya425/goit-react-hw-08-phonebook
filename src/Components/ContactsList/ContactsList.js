@@ -12,7 +12,9 @@ import './ContactsList.scss';
 
 const ContactsList = () => {
   const [contacts, setContacts] = useState([]);
-  const { data, isFetching } = useFetchContactsQuery();
+  const { data, isFetching } = useFetchContactsQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
 
   useEffect(() => {
     if (data) {

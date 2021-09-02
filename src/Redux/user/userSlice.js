@@ -20,7 +20,7 @@ export const userApi = createApi({
   endpoints: builder => ({
     fetchCurrentUser: builder.query({
       query: () => `/users/current`,
-      providesTags: ['User'],
+      invalidatesTags: ['User'],
     }),
     createUser: builder.mutation({
       query: ({ name, email, password }) => ({
