@@ -52,11 +52,6 @@ const Navigation = () => {
     }
   };
 
-  // const handleSubmit = () => {
-  //   const result = logoutUser();
-  //   dispatch(removeCredetials(result.data));
-  // };
-
   return (
     <div className="header">
       <Container>

@@ -13,37 +13,24 @@ import { Container, Form, Button } from 'react-bootstrap';
 import './Register.scss';
 
 const Register = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   const [createUser, { isLoading }] = useCreateUserMutation();
 
   const handleInputName = e => {
     const { name, value } = e.target;
 
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-
-      case 'email':
-        setEmail(value);
-        break;
-
-      case 'password':
-        setPassword(value);
-        break;
-
-      default:
-        return;
-    }
+    setUser(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    createUser({ name, email, password })
+    createUser({ user })
       .unwrap()
       .then(payload => {
         console.log(payload);
@@ -58,9 +45,11 @@ const Register = () => {
   };
 
   const reset = () => {
-    setName('');
-    setEmail('');
-    setPassword('');
+    setUser({
+      name: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (
@@ -73,7 +62,7 @@ const Register = () => {
           <Form.Control
             type="text"
             name="name"
-            value={name}
+            value={user.name}
             placeholder="Name Surname"
             onChange={handleInputName}
           />
@@ -84,7 +73,7 @@ const Register = () => {
           <Form.Control
             type="email"
             name="email"
-            value={email}
+            value={user.email}
             placeholder="Enter email"
             onChange={handleInputName}
           />
@@ -98,7 +87,7 @@ const Register = () => {
           <Form.Control
             type="password"
             name="password"
-            value={password}
+            value={user.password}
             placeholder="Password"
             onChange={handleInputName}
           />

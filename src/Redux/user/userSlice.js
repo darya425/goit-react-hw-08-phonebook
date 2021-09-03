@@ -23,24 +23,24 @@ export const userApi = createApi({
       invalidatesTags: ['User'],
     }),
     createUser: builder.mutation({
-      query: ({ name, email, password }) => ({
+      query: ({ user }) => ({
         url: '/users/signup',
         method: 'POST',
         body: {
-          name: name,
-          email: email,
-          password: password,
+          name: user.name,
+          email: user.email,
+          password: user.password,
         },
       }),
       invalidatesTags: ['User'],
     }),
     loginUser: builder.mutation({
-      query: ({ email, password }) => ({
+      query: ({ user }) => ({
         url: '/users/login',
         method: 'POST',
         body: {
-          email: email,
-          password: password,
+          email: user.email,
+          password: user.password,
         },
       }),
       invalidatesTags: ['User'],

@@ -15,8 +15,10 @@ import { Container, Form, Button } from 'react-bootstrap';
 import './Form.scss';
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [item, setItem] = useState({
+    name: '',
+    number: '',
+  });
 
   const [createContact, { isLoading }] = useCreateContactMutation();
   const { data: contacts } = useFetchContactsQuery();
@@ -24,42 +26,33 @@ const ContactForm = () => {
   const handleInputName = e => {
     const { name, value } = e.target;
 
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-
-      case 'number':
-        setNumber(value);
-        break;
-
-      default:
-        return;
-    }
+    setItem(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    const newContact = name.toLowerCase();
+    const newContact = item.name.toLowerCase();
     const savedContacts = contacts.find(
       contact => contact.name.toLowerCase() === newContact,
     );
 
     if (savedContacts) {
-      alert(name + ' is already in contacts.');
+      toast.error(`${item.name} is already in contacts.`, { autoClose: 2000 });
       reset();
       return;
     }
 
-    createContact({ name, number });
+    createContact({ item });
     toast.success('Contact added!', { autoClose: 2000 });
 
     reset();
   };
 
   const reset = () => {
-    setName('');
-    setNumber('');
+    setItem({
+      name: '',
+      number: '',
+    });
   };
 
   return (
@@ -77,7 +70,7 @@ const ContactForm = () => {
             <Form.Control
               type="text"
               name="name"
-              value={name}
+              value={item.name}
               placeholder="Enter name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="You need to click on the letters"
@@ -91,7 +84,7 @@ const ContactForm = () => {
             <Form.Control
               type="tel"
               name="number"
-              value={number}
+              value={item.number}
               placeholder="Enter number 666-666-6666..."
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               title="Do you know what a dash is?"

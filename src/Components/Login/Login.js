@@ -16,33 +16,24 @@ import './Login.scss';
 const Login = () => {
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
 
   const handleInputName = e => {
     const { name, value } = e.target;
 
-    switch (name) {
-      case 'email':
-        setEmail(value);
-        break;
-
-      case 'password':
-        setPassword(value);
-        break;
-
-      default:
-        return;
-    }
+    setUser(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
 
     try {
-      const result = await loginUser({ email, password })
+      const result = await loginUser({ user })
         .unwrap()
         .then(payload => {
           toast.success('You are logged in!', { autoClose: 2000 });
@@ -63,8 +54,10 @@ const Login = () => {
   };
 
   const reset = () => {
-    setEmail('');
-    setPassword('');
+    setUser({
+      email: '',
+      password: '',
+    });
   };
 
   return (
@@ -77,7 +70,7 @@ const Login = () => {
           <Form.Control
             type="email"
             name="email"
-            value={email}
+            value={user.email}
             placeholder="Enter email"
             onChange={handleInputName}
           />
@@ -88,7 +81,7 @@ const Login = () => {
           <Form.Control
             type="password"
             name="password"
-            value={password}
+            value={user.password}
             placeholder="Password"
             onChange={handleInputName}
           />
