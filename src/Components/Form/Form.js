@@ -11,6 +11,7 @@ import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import { Container, Form, Button, Col, Row } from 'react-bootstrap';
+import NumberFormat from 'react-number-format';
 
 import './Form.scss';
 
@@ -85,12 +86,14 @@ const ContactForm = () => {
             <Col sm={5} className="my-2">
               <Form.Group className="mb-0" controlId="formBasicNumber">
                 <Form.Label>Number</Form.Label>
-                <Form.Control
+                <NumberFormat
+                  className="form-control"
+                  format="###-###-###"
+                  mask="_"
                   type="tel"
                   name="number"
                   value={item.number}
-                  placeholder="Enter number '666-666-6666'"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="Enter number '666-666-666'"
                   title="Do you know what a dash is?"
                   onChange={handleInputName}
                   required

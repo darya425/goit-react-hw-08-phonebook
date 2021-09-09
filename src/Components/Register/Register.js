@@ -95,7 +95,7 @@ const Register = () => {
 
         <Button variant="secondary" type="submit" disabled={isLoading}>
           {isLoading ? (
-            <Loader type="Circles" color="#00BFFF" height={15} width={15} />
+            <Loader type="Circles" color="#383838" height={15} width={15} />
           ) : (
             'Submit'
           )}

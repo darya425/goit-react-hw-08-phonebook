@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <Container>
       <ToastContainer />
-      <h2 className="login-title">Log in please</h2>
+      <h2 className="login-title">Log in</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Label>Email address</Form.Label>
@@ -89,7 +89,7 @@ const Login = () => {
 
         <Button variant="secondary" type="submit" disabled={isLoading}>
           {isLoading ? (
-            <Loader type="Circles" color="#00BFFF" height={15} width={15} />
+            <Loader type="Circles" color="#383838" height={15} width={15} />
           ) : (
             'Submit'
           )}

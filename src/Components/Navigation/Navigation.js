@@ -87,7 +87,7 @@ const Navigation = () => {
                   {isLoading ? (
                     <Loader
                       type="Circles"
-                      color="#00BFFF"
+                      color="#383838"
                       height={15}
                       width={15}
                     />
