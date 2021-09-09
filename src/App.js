@@ -4,9 +4,7 @@ import { Switch } from 'react-router-dom';
 import PrivateRoute from './Components/Navigation/PrivateRoute';
 import PublicRoute from './Components/Navigation/PublicRoute';
 
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
+import Spinner from './Components/Spinner';
 import Navigation from './Components/Navigation';
 import HomePage from './Components/HomePage';
 const ContactForm = lazy(() =>
@@ -30,11 +28,7 @@ const App = () => {
     <>
       <Navigation />
 
-      <Suspense
-        fallback={
-          <Loader type="Circles" color="#383838" height={100} width={100} />
-        }
-      >
+      <Suspense fallback={<Spinner />}>
         <Switch>
           <PublicRoute path="/" exact>
             <HomePage />

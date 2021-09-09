@@ -49,6 +49,11 @@
 }
 
 .name-item {
-  font-size: 20px;
+  font-size: 15px;
   text-transform: capitalize;
+  color: #fffafa;
+
+  @media screen and (min-width: 400px) {
+    font-size: 20px;
+  }
 }

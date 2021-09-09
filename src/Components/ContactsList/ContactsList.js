@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFetchContactsQuery } from '../../Redux/contact/contactSlice';
 import Filter from '../Filter';
 import Contact from '../Contact';
-
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Spinner from '../Spinner';
 
 import { Container } from 'react-bootstrap';
 
@@ -38,10 +36,9 @@ const ContactsList = () => {
   return (
     <Container>
       <h2 className="contact">Contacts</h2>
+
       <Filter filter={onFilterContacts} />
-      {isFetching && (
-        <Loader type="Circles" color="#383838" height={100} width={100} />
-      )}
+      {isFetching && <Spinner />}
       {contacts && (
         <ul className="list">
           {contacts.map(contact => (

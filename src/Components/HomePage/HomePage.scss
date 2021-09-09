@@ -1,0 +1,29 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('./laptop.png');
+}
+
+.home-text {
+  width: 120px;
+
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+
+  @media screen and (min-width: 400px) {
+    width: 150px;
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    font-size: 25px;
+  }
+}

@@ -1,6 +1,10 @@
 .filter-form {
   margin-bottom: 30px;
   align-items: baseline;
+
+  @media screen and (max-width: 400px) {
+    flex-wrap: wrap;
+  }
 }
 
 .form-label.filter-title {

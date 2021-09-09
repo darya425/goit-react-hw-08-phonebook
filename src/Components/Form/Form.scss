@@ -1,16 +1,22 @@
+.col-sm-5 {
+  @media screen and (min-width: 576px) and (max-width: 991px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
 .btn {
   width: 150px;
   height: 38px;
-  margin-bottom: 1rem;
+}
+
+.my-2 {
+  align-self: flex-end;
 }
 
 .form-contact {
   display: flex;
   align-items: flex-end;
-}
-
-.form-control {
-  margin-right: 10px;
 }
 
 .title {

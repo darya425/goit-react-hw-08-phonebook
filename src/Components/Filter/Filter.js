@@ -14,7 +14,7 @@ const Filter = ({ filter }) => {
       <Form.Label className="filter-title">Find contact by name :</Form.Label>
       <FormControl
         type="search"
-        placeholder="Find a contact..."
+        placeholder="Enter name"
         className="mr-2 filter-input"
         aria-label="Search"
         onChange={handleSubmit}
