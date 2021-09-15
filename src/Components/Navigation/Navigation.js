@@ -33,8 +33,6 @@ const Navigation = () => {
   const [logoutUser, { isLoading }] = useLogoutUserMutation();
   const { data: currentUser } = useFetchCurrentUserQuery(token ?? skipToken);
 
-  const isAdmin = name === 'admin';
-
   useEffect(() => {
     if (token === null) {
       return;
@@ -66,11 +64,6 @@ const Navigation = () => {
                 <Nav.Link as={NavLink} to="/contacts">
                   Contacts
                 </Nav.Link>
-                {isAdmin && (
-                  <Nav.Link as={NavLink} to="/admin">
-                    Admin
-                  </Nav.Link>
-                )}
               </Nav>
             )}
             {isLoggedIn ? (

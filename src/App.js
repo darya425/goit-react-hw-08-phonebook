@@ -13,9 +13,6 @@ const ContactForm = lazy(() =>
 const ContactsList = lazy(() =>
   import('./Components/ContactsList' /* webpackChunkName: "ContactsList"*/),
 );
-const AdminPage = lazy(() =>
-  import('./Components/AdminPage' /* webpackChunkName: "AdminPage"*/),
-);
 const Register = lazy(() =>
   import('./Components/Register' /* webpackChunkName: "Register"*/),
 );
@@ -37,10 +34,6 @@ const App = () => {
           <PrivateRoute path="/contacts">
             <ContactForm />
             <ContactsList />
-          </PrivateRoute>
-
-          <PrivateRoute path="/admin">
-            <AdminPage />
           </PrivateRoute>
 
           <PublicRoute path="/login" redirectTo="/contacts" restricted>
